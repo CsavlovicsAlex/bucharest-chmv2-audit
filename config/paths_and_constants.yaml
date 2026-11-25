@@ -1,0 +1,37 @@
+# Shared configuration for all three roles. Every script reads from here.
+
+crs: "EPSG:32635"            # WGS 84 / UTM Zone 35N — the single CRS for all rasters and vectors
+
+paths:
+  raw: data/raw
+  processed: data/processed
+  predictions: data/predictions
+  vectors: data/vectors
+  figures: figures
+
+aoi:
+  east_overlap: data/vectors/east_overlap_aoi.geojson        # produced by Script 01
+  grozavesti_park: data/vectors/grozavesti_park_aoi.geojson  # produced by Script 01
+
+model:
+  hf_id: facebook/dinov3-vitl16-chmv2-dpt-head
+  dtype: float16
+  target_gsd_m: 0.60          # GSD CHMv2 was trained on
+  chip_size_px: 512
+  chip_overlap: 0.5
+  blend_window: hann
+
+controls:
+  vegetation_buffer_m: 15     # Zone 1: > 15 m from vegetation; Zone 2: 0–15 m
+  fpr_thresholds_m: [1.0, 2.0]
+
+scenes:
+  kompsat_east_2021:
+    date: 2021-07-29
+    off_nadir_deg: 14.2
+    sun_elevation_deg: 62.6
+  kompsat_east_2022:
+    date: 2022-07-19
+    off_nadir_deg: 24.5
+    sun_elevation_deg: 63.2
+    cloud_grade: C
