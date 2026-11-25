@@ -1,0 +1,109 @@
+# =====================================================================
+# DATA — NEVER COMMIT RAW / DERIVED SATELLITE IMAGERY
+# Commercial VHR tiles (KOMPSAT-3A, Pleiades Neo, SPOT 7) are licensed
+# to the Masterclass only. Everything under data/ is ignored except the
+# README files that document the folder layout.
+# =====================================================================
+/data/**
+!/data/**/
+!/data/**/README.md
+
+# Imagery, rasters and sensor metadata anywhere in the repo (safety net)
+*.tif
+*.tiff
+*.TIF
+*.TIFF
+*.jp2
+*.JP2
+*.ntf
+*.NTF
+*.img
+*.vrt
+*.ecw
+*.DIM
+*.dim
+*_Aux.xml
+*.aux.xml
+*.ovr
+*.SAFE/
+*.nc
+*.h5
+*.hdf
+*.zarr/
+
+# Archives (satellite deliveries usually arrive zipped)
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+*.rar
+
+# Large vector / geodatabase files
+*.gpkg
+*.gdb/
+*.shp
+*.shx
+*.dbf
+*.prj
+*.cpg
+*.qix
+*.osm.pbf
+*.pbf
+
+# Model weights & caches
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+.cache/
+hf_cache/
+huggingface/
+
+# =====================================================================
+# Python
+# =====================================================================
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+env/
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Secrets
+.env
+*.env
+.netrc
+credentials*.json
+
+# =====================================================================
+# LaTeX build artefacts (paper/)
+# =====================================================================
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+
+# =====================================================================
+# OS / editors / GIS
+# =====================================================================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.qgz~
+*.qgs~
