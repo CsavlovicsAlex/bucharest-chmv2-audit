@@ -1,0 +1,11 @@
+torch
+transformers>=5.10
+huggingface_hub
+numpy
+rasterio
+geopandas
+shapely
+scikit-image
+osmnx
+matplotlib
+pyyaml
